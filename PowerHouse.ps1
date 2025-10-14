@@ -34,10 +34,10 @@ function Install-App {
     winget install --id $Id -e --accept-source-agreements --accept-package-agreements
     if ($LASTEXITCODE -eq 0) {
         Write-Host "$Name installed successfully!" -ForegroundColor Green
-        "$Name: Success" | Out-File $logPath -Append
+        "${Name}: Success" | Out-File $logPath -Append
     } else {
         Write-Host "Failed to install $Name" -ForegroundColor Red
-        "$Name: Failed" | Out-File $logPath -Append
+        "${Name}: Failed" | Out-File $logPath -Append
     }
     Write-Host ""
 }
@@ -114,3 +114,4 @@ foreach ($app in $apps) {
 Write-Host ""
 Write-Host "All installations attempted." -ForegroundColor Cyan
 Pause
+
