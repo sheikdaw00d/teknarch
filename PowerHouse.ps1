@@ -85,18 +85,20 @@ switch -Wildcard ($manufacturer) {
     default     { Write-Host "No OEM-specific tools required for: $manufacturer" -ForegroundColor Yellow }
 }
 
-# CPU Detection and Support Tool Logic
+# CPU Detection
 $cpuName = (Get-WmiObject -Class Win32_Processor).Name
+Write-Host "Detected CPU: $cpuName" -ForegroundColor Cyan
+"CPU Detected: $cpuName" | Out-File $logPath -Append
 
 if ($cpuName -like "*AMD*") {
-    Start-Process "https://www.amd.com/en/support/download/drivers.html"
     Write-Host "AMD CPU detected — launching Auto-Detect tool." -ForegroundColor Yellow
+    Start-Process "https://www.amd.com/en/support/download/drivers.html"
     "AMD CPU Detected: $cpuName — Update tool launched" | Out-File $logPath -Append
 }
 
 if ($cpuName -like "*Intel*") {
-    Install-App -Id "Intel.IntelDriverAndSupportAssistant" -Name "Intel® Driver & Support Assistant"
     Write-Host "Intel CPU detected — installing Driver & Support Assistant." -ForegroundColor Yellow
+    Install-App -Id "Intel.IntelDriverAndSupportAssistant" -Name "Intel® Driver & Support Assistant"
     "Intel CPU Detected: $cpuName — Support Assistant installed" | Out-File $logPath -Append
 }
 
@@ -141,6 +143,7 @@ foreach ($app in $apps) {
 Write-Host ""
 Write-Host "All installations attempted." -ForegroundColor Cyan
 Pause
+
 
 
 
