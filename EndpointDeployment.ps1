@@ -65,8 +65,8 @@ function Install-App ($Id, $Name) {
     } catch {
         $installStatus = "Error: $($_.Exception.Message)"
     }
-    "$Name: $installStatus — $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')" | Out-File $logPath -Append
-    Write-Host "$Name: $installStatus" -ForegroundColor Cyan
+    "${Name}: $installStatus — $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')" | Out-File $logPath -Append
+    Write-Host "${Name}: $installStatus" -ForegroundColor Cyan
     Write-Host ""
 }
 
@@ -218,5 +218,6 @@ if (Test-Path $historyPath) {
 # ✅ Final Message
 Write-Host "`nDeployment complete. Welcome to SHEIKLAB." -ForegroundColor Cyan
 Pause
+
 
 
