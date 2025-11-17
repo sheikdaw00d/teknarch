@@ -129,9 +129,9 @@ if ($cpu -like "*AMD*")   { Install-AMDAdrenalinDriver }
 if ($cpu -like "*Intel*") { Install-App "Intel.IntelDriverAndSupportAssistant" "Intel® Driver & Support Assistant" }
 if ($gpu -like "*NVIDIA*") { Install-NvidiaApp }
 
-# ===============================
-# 🧑‍💼 powerdesk — Office Profile
-# ===============================
+# =====================================
+# 🧑‍💼 powerdesk — Runtime & Framework
+# =====================================
 $appsPowerdesk = @(
     @{ Id = "Microsoft.VCRedist.2005.x86"; Name = "Visual C++ 2005 x86" },
     @{ Id = "Microsoft.VCRedist.2008.x86"; Name = "Visual C++ 2008 x86" },
@@ -149,9 +149,9 @@ $appsPowerdesk = @(
     @{ Id = "Microsoft.DotNet.AspNetCore.8"; Name = "ASP.NET Core Runtime 8 (LTS)" }
 )
 
-# =================================
-# 🎮 powerbuild — Architect Profile
-# =================================
+# ============================
+# 🎮 powerbuild — Application
+# ============================
 $appsPowerbuild = $appsPowerdesk + @(
     @{ Id = "Microsoft.Office"; Name = "Microsoft 365 Apps for enterprise" },
     @{ Id = "Google.Chrome"; Name = "Google Chrome" },
@@ -172,9 +172,9 @@ $appsPowerbuild = $appsPowerdesk + @(
     # @{ Id = "9NBLGGH4XXVW"; Name = "Trello" }  
 )
 
-# ========================================
-# 🎨 powerstack — Content Creation Profile
-# ========================================
+# =================================
+# 🎨 powerstack — Content Creation
+# =================================
 $appsPowerstack = $appsPowerbuild + @( 
     @{ Id = "Audacity.Audacity"; Name = "Audacity" },
     @{ Id = "OBSProject.OBSStudio"; Name = "OBS Studio" },
@@ -188,8 +188,8 @@ $appsPowerstack = $appsPowerbuild + @(
 
 # 🔀 Profile Selection
 Write-Host "`nAvailable Profiles:" -ForegroundColor Cyan
-Write-Host "  - powerdesk   (Office)"
-Write-Host "  - powerbuild  (Architect)"
+Write-Host "  - powerdesk   (Runtime & Framework)"
+Write-Host "  - powerbuild  (Application)"
 Write-Host "  - powerstack  (Content Creation)"
 $profile = Read-Host "Enter profile name"
 
@@ -224,6 +224,7 @@ if (Test-Path $historyPath) {
 # ✅ Final Message
 Write-Host "`nDeployment complete. Welcome to SHEIKLAB." -ForegroundColor Cyan
 Pause
+
 
 
 
