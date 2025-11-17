@@ -146,7 +146,13 @@ $appsPowerdesk = @(
     @{ Id = "Microsoft.DotNet.DesktopRuntime.6"; Name = ".NET Desktop Runtime 6 (LTS)" },
     @{ Id = "Microsoft.DotNet.DesktopRuntime.8"; Name = ".NET Desktop Runtime 8 (LTS)" },
     @{ Id = "Microsoft.DotNet.AspNetCore.6"; Name = "ASP.NET Core Runtime 6 (LTS)" },
-    @{ Id = "Microsoft.DotNet.AspNetCore.8"; Name = "ASP.NET Core Runtime 8 (LTS)" }, 
+    @{ Id = "Microsoft.DotNet.AspNetCore.8"; Name = "ASP.NET Core Runtime 8 (LTS)" }
+)
+
+# =================================
+# 🎮 powerbuild — Architect Profile
+# =================================
+$appsPowerbuild = $appsPowerdesk + @(
     @{ Id = "Microsoft.Office"; Name = "Microsoft 365 Apps for enterprise" },
     @{ Id = "Google.Chrome"; Name = "Google Chrome" },
     @{ Id = "9NKSQGP7F2NH"; Name = "WhatsApp" },
@@ -157,20 +163,15 @@ $appsPowerdesk = @(
     @{ Id = "RustDesk.RustDesk"; Name = "RustDesk" },
     @{ Id = "7zip.7zip"; Name = "7-Zip" },
     @{ Id = "JAMSoftware.TreeSize.Free"; Name = "TreeSize Free" }
-)
 
-# =================================
-# 🎮 powerbuild — Architect Profile
-# =================================
-$appsPowerbuild = $appsPowerdesk + @(
-    @{ Id = "EpicGames.EpicGamesLauncher"; Name = "Epic Games Launcher" },
-    @{ Id = "Discord.Discord"; Name = "Discord" },
-    @{ Id = "Telegram.TelegramDesktop"; Name = "Telegram Desktop" },
-    @{ Id = "SlackTechnologies.Slack"; Name = "Slack" },
-    @{ Id = "9WZDNCRFJCTK"; Name = "AutoCAD - DWG Viewer & Editor" },
-    @{ Id = "BlenderFoundation.Blender"; Name = "Blender" },
-    @{ Id = "XPDBVSS44R0L9H"; Name = "Notion" },
-    @{ Id = "9NBLGGH4XXVW"; Name = "Trello" }  
+    # @{ Id = "EpicGames.EpicGamesLauncher"; Name = "Epic Games Launcher" },
+    # @{ Id = "Discord.Discord"; Name = "Discord" },
+    # @{ Id = "Telegram.TelegramDesktop"; Name = "Telegram Desktop" },
+    # @{ Id = "SlackTechnologies.Slack"; Name = "Slack" },
+    # @{ Id = "9WZDNCRFJCTK"; Name = "AutoCAD - DWG Viewer & Editor" },
+    # @{ Id = "BlenderFoundation.Blender"; Name = "Blender" },
+    # @{ Id = "XPDBVSS44R0L9H"; Name = "Notion" },
+    # @{ Id = "9NBLGGH4XXVW"; Name = "Trello" }  
 )
 
 # ========================================
@@ -223,6 +224,7 @@ if (Test-Path $historyPath) {
 # ✅ Final Message
 Write-Host "`nDeployment complete. Welcome to SHEIKLAB." -ForegroundColor Cyan
 Pause
+
 
 
 
