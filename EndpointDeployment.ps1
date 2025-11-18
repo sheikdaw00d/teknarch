@@ -182,7 +182,7 @@ $appsPowerstack = $appsPowerbuild + @(
     @{ Id = "Canva.Canva"; Name = "Canva Desktop" },
     @{ Id = "ByteDance.CapCut"; Name = "CapCut" },
     @{ Id = "Canva.Affinity"; Name = "Affinity" },
-    @{ Id = "Telegram.TelegramDesktop", Name = "Telegram Desktop" },
+    @{ Id = "Telegram.TelegramDesktop"; Name = "Telegram Desktop" },
     @{ Id = "Google.GoogleDrive"; Name = "Google Drive" }  
 )
 
@@ -224,6 +224,7 @@ if (Test-Path $historyPath) {
 # ✅ Final Message
 Write-Host "`nDeployment complete. Welcome to SHEIKLAB." -ForegroundColor Cyan
 Pause
+
 
 
 
